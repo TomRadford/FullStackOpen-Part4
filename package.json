@@ -1,0 +1,32 @@
+{
+  "name": "fullstackopen-part4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomRadford/FullStackOpen-Part4.git"
+  },
+  "author": "Tom Radford",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TomRadford/FullStackOpen-Part4/issues"
+  },
+  "homepage": "https://github.com/TomRadford/FullStackOpen-Part4#readme",
+  "devDependencies": {
+    "eslint": "^8.12.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.10"
+  }
+}
