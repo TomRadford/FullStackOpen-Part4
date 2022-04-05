@@ -12,8 +12,8 @@ blogsRouter.get('/', (request, response) => {
 blogsRouter.post('/', (request, response) => {
   const blog = new Blog(request.body);
 
-  Blog
-    .save(blog)
+  blog
+    .save()
     .then((result) => {
       response.status(201).json(result);
     });
