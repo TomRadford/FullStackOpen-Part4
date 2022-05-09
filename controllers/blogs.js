@@ -39,7 +39,7 @@ blogsRouter.delete('/:id', userExtractor, async (request, response) => {
 	
 	if (!request.user.id) {
 		return response.status(400).json({
-			error: 'Missing or invalide token'
+			error: 'Missing or invalid token'
 		})
 	}
 
@@ -56,10 +56,13 @@ blogsRouter.delete('/:id', userExtractor, async (request, response) => {
 })
 
 blogsRouter.put('/:id', userExtractor, async (request, response) => {
-	const { body } = request
-	const updatedBlog = await Blog.findByIdAndUpdate(request.params.id, body, { new: true } )
+	const {body} = request
+	body.user = request.user.id
+	if (!request.user) {
+		return response.status(401).json({ error: 'Missing or invalid token ' })
+	}
+	const updatedBlog = await Blog.findByIdAndUpdate(request.params.id, body, { new: true, context: 'query' } )
 	response.json(updatedBlog)
 })
-
 
 module.exports = blogsRouter
